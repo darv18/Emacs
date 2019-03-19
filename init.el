@@ -31,10 +31,10 @@
 ;;(elpy-enable)
 
 ;;USE-PACKAGE
-(unless (featurep 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  )
+;;(unless (featurep 'use-package)
+;;  (package-refresh-contents)
+;;  (package-install 'use-package)
+;;  )
 
 ;;(require 'powerline)
 ;;(powerline-default-theme)
@@ -55,7 +55,7 @@
 
 ;; Añadir automáticamente paréntesis, llave y comillas
 ;; de cierre al insertar la de apertura.
-;(setq skeleton-pair t)
+(setq skeleton-pair t)
 ;(global-set-key “[” ‘skeleton-pair-insert-maybe)
 ;(global-set-key “(” ‘skeleton-pair-insert-maybe)
 ;(global-set-key “ { ” ‘skeleton-pair-insert-maybe)
@@ -67,3 +67,9 @@
 
 ;;Auto-complete
 (global-auto-complete-mode t)
+
+;;The Lazy Installer
+;;(custom-set-variables
+;; '(inhibit-startup-screen t)
+;; )
+
