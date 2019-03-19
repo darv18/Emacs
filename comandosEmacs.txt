@@ -1,0 +1,244 @@
+Estos son comandos básicos y útiles para usar Emacs correctamente
+
+C = Ctrl
+M (META) = Alt
+SUPER = Tecla de Windows
+SPC = Barra Espacio
+
+############################################################################
+
+*.- Comando de ayuda	.......... C-h
+
+#COMANDOS BÁSICOS DE EMACS
+
+1.- Abrir un archivo.	.......... C-x C-f
+    
+2.- Cerrar Emacs	.......... C-x C-c	
+
+3.- Cerrar el buffer	.......... C-x k
+
+4.- Cambiar de buffer	.......... C-x b
+
+5.- Guardar un archivo 	.......... C-x C-s
+
+6.- Cancelar alguna acción ....... C-g
+
+7.- Deshacer alguna acción ....... C-x u
+
+8.- Copiar texto	.......... M-w
+
+9.- Pegar texto		.......... C-y
+
+10.- Cortar texto	.......... C-w
+
+11.- Seleccionar todo
+     texto		.......... C-SPC
+
+12.- Dividir la pantalla en
+     dos horizontalmente.......... C-x 2
+
+13.- Dividir la pantalla en
+     verticalmente	.......... C-x 3
+
+14.- Moverse entre
+     pantallas		.......... C-x o
+
+15.- Deja solo una ventana
+     abierta		.......... C-x 1
+
+16.- Cerrar una ventana	.......... C-x 0
+
+17.- Mueve la pantalla
+     para poder mostrar
+     el texto		.......... C-l
+
+18.- Buscar Una palabra .......... C-s
+
+19.- Buscar Siguiente	.......... C-s / C-r
+
+20.- Minimiza la ventana
+     de Emacs		.......... C-z
+############################################################################
+
+#SHELL
+
+20.- Poder usar comandos
+     en Emacs		.......... M-x
+
+21.- Compilar Código en Emacs .... M-x compile
+     saldra make -k y pondremos
+     g++ program.cpp -o program
+
+22.- Ejecutar Shell  	.......... M-x shell
+
+     	      ó
+
+     Ejecutar Shell	.......... M-x eshell     
+
+############################################################################
+
+#MOVERSE POR TEXTO
+
+23.- Moverse un cararcter
+     hacia delante	.......... C-f
+
+24.- Moverser un caracter
+     hacia atrás	.......... C-b
+
+25.- Moverse una palabra
+     hacia adelante	.......... M-f 
+
+26.- Moverse una palabra
+     hacia atrás	.......... M-b
+
+27.- Moverse a la siguiente
+     línea		.......... C-n
+
+28.- Moverse a la línea
+     anterior		.......... C-p
+
+29.- Moverse al comienzo
+     de una línea	.......... C-a
+
+30.- Moverse al final
+     de una línea	.......... C-e
+
+31.- Moverse al inicio
+     de una oración	.......... M-a
+
+32.- Moverse al final
+     de una oración	.......... M-e	    
+
+
+############################################################################
+
+#PERSONALIZACIÓN DE EMACS
+
+*El archivo de configuración de Emacs es /.emacs
+
+~Ejemplos de mí Personalización en Emacs.-
+
+33.- Sí quiero quitar la barra de menu y la barra de tareas escribo lo
+     siguiente.
+
+     '(menu-bar-mode nill)
+     '(tool-bar-mode nill))
+
+34.- Sí quiero que aparezacan numeradas las lineas escribo la siguiente
+     línea.
+
+     '(global-linum-mode t)
+
+
+     La forma gráfica reuqiere ingresar
+     M-x customize
+############################################################################
+
+#THEME DE EMACS
+
+*Cambiar theme de Emacs
+
+35.- Vamos al archivo de configuración de Emacs
+     ~/.emacs y dentro del archivo en mi caso pondremos
+     la siguiente línea:
+
+     '(custom-enable-theames (quote (light-blue)))
+
+~También existe la forma de poner un tema de forma gráfica
+
+36.- Ingresamos el comando "customize-themes" y tendremos algunos
+     themes por defecto, hay que recordar que al seleccionar
+     la casilla de algun tema debemos guardarlo para que
+     la configuración permanezca una ves allamos cerrado
+     Emacs
+
+#####################################################################
+
+#CONFIGURACIÓN DE PAQUETES
+
+~Lo que vamos a hacer es ampliar nuestra lista de pauqetes
+    que por defecto lee Emacs
+
+37.- Visualizar paquetes por defecto de Emacs
+     		M-x list-package
+
+*Por defecto Emacs esta conectado al servidor elpa
+~Nos conectaremos a un servidor llamado melpa
+
+38.- Entramos a customize
+     M-x customize
+
+     -En el filtramos "packages"
+     -Vamos a Package Archives ahí añadiremos la url de melpa
+     	    https://melpa.org/packages/
+     -Recuerda guardarla para futuras sesiones
+     -configurar donde se van a guardar los paquetes
+     -Vamos a Package User Dir ~/.emacs/<melpa>
+     -Reiniciamos la sesión de Emacs
+
+39.- format-all	  Autoidentado
+
+#############################################################
+
+#Company Mode
+	 Company mode es un framework que proporciona un completado
+	 inteligente de código para los distintos modos de GNU Emacs.
+
+	 	     M-x package-install RET company
+
+#Pomidor
+	Pomidor es un paquete que permite tomar tiempos de trabajo,
+	basado en la técnica Pomodoro, la cual básicamente se trata
+	de dividir las actividades en pequeños ciclos de 30 minutos
+	llamados “pomodoros”, de los cuales 25 minutos se los dedica
+	a trabajar sin distracciones y 5 minutos a un pequeño descanso.
+	Después de 4 pomodoros se puede tomar un descanso de 20 minutos.
+
+	Pomidor notifica cuando es hora de trabajar y cuando se puede descansar.
+
+		     M-x package-install RET pomidor
+################################################################
+
+
+40.- make-directory	.......... crear directorios desde
+     				   la barra de Emacs
+				   
+41.- delete-directory	.......... borrar directorios desde
+     				   la barra de Emacs
+
+################################################################
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
+
+;;USE-PACKAGE
+(unless (featurep 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package)
+  )
+
+################################################################
+
+#Spotify
+
+Play			counsel-spotify-play
+Toggle play/pause	counsel-spotify-toggle-play-pause
+Next song		counsel-spotify-next
+Previous song		counsel-spotify-previous
+
+################################################################
+
+#cambiar configuración de teclas
+
+(global-set-key (kbd "RET" ) 'newline-and-indent)
+(global-set-key (kbd "C-;" ) 'comentar-o-descomentar-región)
+(global-set-key (kbd "M- /" ) 'hippie-expand)
+(global-set-key (kbd "C- +" ) 'aumento de escala de texto'
+(global-set-key (kbd "C--" ) 'disminución de escala de texto'
+(global-set-key (kbd "Cc Ck" ) 'compilar)
+(global-set-key (kbd "Cx g" ) 'magit-status)
