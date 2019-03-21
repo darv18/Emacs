@@ -17,7 +17,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company-jedi ipython-shell-send jedi use-package format-all elpygen python company )))
+    (autopair ido-vertical-mode company-jedi ipython-shell-send jedi use-package format-all elpygen python company)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -65,11 +65,56 @@
 (add-to-list 'interpreter-mode-alist '("python2" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python3" . python-mode))
 
-;;Auto-complete
-(global-auto-complete-mode t)
+;;Auto-complete y Company
+;;(global-auto-complete-mode t)
+(global-company-mode t)
 
 ;;The Lazy Installer
 ;;(custom-set-variables
 ;; '(inhibit-startup-screen t)
 ;; )
 
+;;Mostrar Bateria
+(display-battery-mode 1)
+
+;;Iluminar parentesis
+(show-paren-mode 1)
+
+;;fullscreen
+(toggle-frame-fullscreen)
+
+;;Mensaje en el Buffer
+;;scratch
+;;(setq initial-scratch-message"
+
+;;Welcome Operating System
+;;Gnu and Emacs th Editor of 
+;;the Gods ;;
+
+;;")
+
+(show-paren-mode t)
+
+;;Para que ido sea vertical
+(ido-vertical-mode t)
+
+;;Modo para cerrar paréntesis automáticamente
+(autopair-global-mode t)
+
+;;Activación de web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+;;Flycheck-Mode Chequeo de syntaxis
+(global-flycheck-mode 1)
+
+;;Es un sistema de plantillas para Emacs. Provee templates de distintos
+;;lenguajes para que podamos expandir un modelo de función por ejemplo
+;;a partir de una abreviación.
+(yas-global-mode 1)
