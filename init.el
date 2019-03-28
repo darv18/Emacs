@@ -1,315 +1,237 @@
-Estos son comandos básicos y útiles para usar Emacs y no morir en el intento.
 
-The difference between emacs, and vi, is like the difference between making love,
-and masturbation.That is to say: ‘vi’ will always be there when you need it.
+;;;;;;;;;;;;;;;;;;;Paquetes;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-C = Ctrl
-M (META) = Alt
-SUPER = Tecla de Windows
-SPC = Barra Espacio
-
-http://emacs-bootstrap.com/
-
-############################################################################
-
-*.- Comando de ayuda	.......... C-h
-
-#COMANDOS BÁSICOS DE EMACS
-
-1.- Abrir un archivo.	.......... C-x C-f
-
-2.- Cerrar Emacs	.......... C-x C-c
-
-3.- Cerrar el buffer	.......... C-x k
-
-4.- Cambiar de buffer	.......... C-x b
-
-5.- Guardar un archivo 	.......... C-x C-s
-
-6.- Cancelar alguna acción ....... C-g
-
-7.- Deshacer alguna acción ....... C-x u
-
-8.- Copiar texto	.......... M-w
-
-9.- Pegar texto		.......... C-y
-
-10.- Cortar texto	.......... C-w
-
-11.- Seleccionar todo
-     texto		.......... C-SPC
-
-12.- Dividir la pantalla en
-     dos horizontalmente.......... C-x 2
-
-13.- Dividir la pantalla en
-     verticalmente	.......... C-x 3
-
-14.- Moverse entre
-     pantallas		.......... C-x o
-
-15.- Deja solo una ventana
-     abierta		.......... C-x 1
-
-16.- Cerrar una ventana	.......... C-x 0
-
-17.- Mueve la pantalla
-     para poder mostrar
-     el texto		.......... C-l
-
-18.- Se desplaza una pantalla
-     hacia abajo	.......... C-v
-
-19.- Se desplaza una pantalla
-     hacia arriba	.......... M-v
-
-20.- Buscar Una palabra .......... C-s
-
-21.- Buscar Siguiente	.......... C-s / C-r
-
-22.- Minimiza la ventana
-     de Emacs		.......... C-z
-############################################################################
-
-#SHELL
-
-23.- Poder usar comandos
-     en Emacs		.......... M-x
-
-24.- Compilar Código en Emacs .... M-x compile
-     saldra make -k y pondremos
-     g++ program.cpp -o program
-
-25.- Ejecutar Shell  	.......... M-x shell
-
-     	      ó
-
-     Ejecutar Shell	.......... M-x eshell
-
-26.- Abrir Shell Python .......... C-c C-p
-
-############################################################################
-
-#MOVERSE POR TEXTO
-
-27.- Moverse un cararcter
-     hacia delante	.......... C-f
-
-28.- Moverser un caracter
-     hacia atrás	.......... C-b
-
-29.- Moverse una palabra
-     hacia adelante	.......... M-f
-
-30.- Moverse una palabra
-     hacia atrás	.......... M-b
-
-31.- Moverse a la siguiente
-     línea		.......... C-n
-
-32.- Moverse a la línea
-     anterior		.......... C-p
-
-33.- Moverse al comienzo
-     de una línea	.......... C-a
-
-34.- Moverse al final
-     de una línea	.......... C-e
-
-35.- Moverse al inicio
-     de una oración	.......... M-a
-
-36.- Moverse al final
-     de una oración	.......... M-e
-
-37.- Revisar la ortografía
-     sobre alguna palabra ........ M-$
-
-38.- Revisar la ortografía
-     de todo el texto
-     en el buffer	.......... M-x ispell
-
-############################################################################
-
-#PERSONALIZACIÓN DE EMACS
-
-*El archivo de configuración de Emacs es /.emacs
-
-~Ejemplos de mí Personalización en Emacs.-
-
-39.- Sí quiero quitar la barra de menu y la barra de tareas escribo lo
-     siguiente.
-
-     '(menu-bar-mode nill)
-     '(tool-bar-mode nill))
-
-40.- Sí quiero que aparezacan numeradas las lineas escribo la siguiente
-     línea.
-
-     '(global-linum-mode t)
-
-
-     La forma gráfica reuqiere ingresar
-     M-x customize
-############################################################################
-
-#THEME DE EMACS
-
-*Cambiar theme de Emacs
-
-41.- Vamos al archivo de configuración de Emacs
-     ~/.emacs y dentro del archivo en mi caso pondremos
-     la siguiente línea:
-
-     '(custom-enable-theames (quote (light-blue)))
-
-~También existe la forma de poner un tema de forma gráfica
-
-42.- Ingresamos el comando "customize-themes" y tendremos algunos
-     themes por defecto, hay que recordar que al seleccionar
-     la casilla de algun tema debemos guardarlo para que
-     la configuración permanezca una ves allamos cerrado
-     Emacs
-
-#####################################################################
-
-#CONFIGURACIÓN DE PAQUETES
-
-~Lo que vamos a hacer es ampliar nuestra lista de pauqetes
-    que por defecto lee Emacs
-
-43.- Visualizar paquetes por defecto de Emacs
-     		M-x list-package
-
-*Por defecto Emacs esta conectado al servidor elpa
-~Nos conectaremos a un servidor llamado melpa
-
-44.- Entramos a customize
-     M-x customize
-
-     -En el filtramos "packages"
-     -Vamos a Package Archives ahí añadiremos la url de melpa
-     	    https://melpa.org/packages/
-     -Recuerda guardarla para futuras sesiones
-     -configurar donde se van a guardar los paquetes
-     -Vamos a Package User Dir ~/.emacs/<melpa>
-     -Reiniciamos la sesión de Emacs
-
-45.- format-all	  Autoidentado
-
-#############################################################
-
-# Company Mode
-	 Company mode es un framework que proporciona un completado
-	 inteligente de código para los distintos modos de GNU Emacs.
-
-	 	     M-x package-install RET company
-
-# Pomidor
-	Pomidor es un paquete que permite tomar tiempos de trabajo,
-	basado en la técnica Pomodoro, la cual básicamente se trata
-	de dividir las actividades en pequeños ciclos de 30 minutos
-	llamados “pomodoros”, de los cuales 25 minutos se los dedica
-	a trabajar sin distracciones y 5 minutos a un pequeño descanso.
-	Después de 4 pomodoros se puede tomar un descanso de 20 minutos.
-
-	Pomidor notifica cuando es hora de trabajar y cuando se puede descansar.
-
-		     M-x package-install RET pomidor
-################################################################
-
-
-46.- make-directory	.......... crear directorios desde
-     				   la barra de Emacs
-
-47.- delete-directory	.......... borrar directorios desde
-     				   la barra de Emacs
-
-################################################################
-
-# MELPA
-
+;;Configuración de MELPA danRV18
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
 
+;;USE-PACKAGE
+;;(unless (featurep 'use-package)
+;;  (package-refresh-contents)
+;;  (package-install 'use-package)
+;;  )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-# USE-PACKAGE
-(unless (featurep 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  )
-
-################################################################
-
-# Spotify
-
-Play			counsel-spotify-play
-Toggle play/pause	counsel-spotify-toggle-play-pause
-Next song		counsel-spotify-next
-Previous song		counsel-spotify-previous
-
-################################################################
-
-# Cambiar configuración de teclas
-
-(global-set-key (kbd "RET" ) 'newline-and-indent)
-(global-set-key (kbd "C-;" ) 'comentar-o-descomentar-región)
-(global-set-key (kbd "M- /" ) 'hippie-expand)
-(global-set-key (kbd "C- +" ) 'aumento de escala de texto'
-(global-set-key (kbd "C--" ) 'disminución de escala de texto'
-(global-set-key (kbd "Cc Ck" ) 'compilar)
-(global-set-key (kbd "Cx g" ) 'magit-status)
-
-################################################################
-
-#JEDI
-* Primero se configura The Lazy Installer
-* En el directorio ~/.emacs/init.el
-* Agregamos lo Siguiente:
-
+(package-initialize) ;; You might already have this line
 (custom-set-variables
- '(inhibit-startup-screen t)
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(bubbles-colors (quote ("orange" "violet")))
+ '(bubbles-graphics-theme (quote balls))
+ '(bubbles-grid-size (quote (20 . 15)))
+ '(custom-enabled-themes (quote (light-blue)))
+ '(global-linum-mode t)
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (scratch symon mwe-log-commands autopair ido-vertical-mode company-jedi ipython-shell-send jedi use-package format-all elpygen python company)))
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
+;;;;;;;;;;;;Desarrollo;;;;;;;;;;;
 
-* Reiniciamos Emacs
-* Ahora en The Lazy Installer
+;;Habilitar Elpy
+;;(elpy-enable)
 
-(url-retrieve
- "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el"
- (lambda (s)
-   (goto-char (point-max))
-   (eval-print-last-sexp)))
+;;python
+;;(add-hook 'python-mode-hook
+;;          (lambda ()
+;;            (setq python-indent-offset 1)))
+(defun configure-python-mode
+  (setq python-indent-offset 2))
 
-* Presionamos C-j
+(add-hook 'python-mode-hook 'configure-python-mode)
 
-#####################################################################
+;;Hace que Emacs sepa que existe python2 y python3
+(add-to-list 'interpreter-mode-alist '("python2" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python3" . python-mode))
 
-##jedi
-* En ~/.emacs/init.el
+;;Definir lenguajes que entiende babel
+(org-babel-do-load-languages'org-babel-do-load-languages
+ '((dot . t)
+   (emacs-lisp . t)
+   (latex . t)
+   (python . t)
+   (shell . t)
+   (php . t)))
 
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;;;;;;;;;;;;;;;;;;;;org-mode;;;;;;;;;;;;;;;;;;;;;
 
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+(setq org-log-done t
+      org-todo-keywords '((sequence "TODO" "INPROGRESS" "DONE"))
+      org-todo-keyword-faces '(("INPROGRESS" . (:foreground "blue" :weight bold))))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (flyspell-mode)))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (writegood-mode)))
+;;;;;;;;;;;;;;;;;;;;;;agenda;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
+ (global-set-key (kbd "C-c a") 'org-agenda)
+ (setq org-agenda-show-log t
+       org-agenda-todo-ignore-scheduled t
+       org-agenda-todo-ignore-deadlines t)
+ (setq org-agenda-files (list "~/Dropbox/org/agenda.org"))
 
-	M-x el-get-install RET jedi RET
-	M-x jedi:install-server RET
+;;Información del dueño
+(setq user-full-name "Daniel Rodriguez")
+(setq user-mail-address "<correo>@gmail.com")
 
-###############################################################
+;;;;;;;;;;;;;Personalización;;;;;;;;;;;;;
 
-# Eliminar Emacs
+;;Simple monitor de sistema en el miniBuffer
+(symon-mode t)
 
-$ sudo apt-get purge emacs24
-$ sudo apt-get remove --auto-remove emacs24-lucid emacs24-nox
+;;Seguridad de las conexiones
+(setq network-security-level 'high)
+
+;; reloj con formato 24 horas
+;; Mostrar fecha y hora
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
+
+;;Mostrar horas en lugar de días
+;(setq org-duration-format 'h:mm)
+
+;;Mostrar Bateria
+(display-battery-mode 1)
+
+;;fullscreen
+(toggle-frame-fullscreen)
+
+;;tema para la barra inferior
+;;(require 'powerline)
+;;(powerline-default-theme)
+
+;;Modo jedi
+(use-package company-jedi
+  :ensure t)
+(add-hook 'python-mode-hook
+          (lambda ()
+            (company-mode 1)))
+
+;;Remplazar "yes" y "no" por "y" y "n"
+(fset 'yes-or-no-p'y-or-n-p)
+
+;;Para que ido sea vertical
+(ido-vertical-mode t)
+
+;;Mensaje en el Buffer
+;;scratch
+(setq initial-scratch-message "Este es un mensaje de prueba")
+
+;;Modificación en el buffer de inicio
+;;No se muestra la ventana principal
+(setq inhibit-splash-screen nil)
+
+;;Guardar la sesión al cerrar Emacs y
+;;restaurarla
+;;(desktop-save-mode 1)
+
+;;The Lazy Installer
+;;(custom-set-variables
+;; '(inhibit-startup-screen t)
+;; )
+
+;;;;;;;;;;;;;;;;;Syntaxis;;;;;;;;;;;;;;
+
+;;Diccionario
+(setq ispell-dictionary "español")
+
+;;Auto Identación
+(setq global-auto-complete-mode t)
+
+;;Auto-complete y Company
+;;(global-auto-complete-mode t)
+(global-company-mode t)
+
+;;Modo para cerrar paréntesis automáticamente
+(autopair-global-mode t)
+
+;;Iluminar parentesis y llaves
+(show-paren-mode t)
+
+;;Emparejar parectesis y llaves
+;(electric-pair-mode 1)
+
+;;Flycheck-Mode Chequeo de syntaxis
+(global-flycheck-mode 1)
+
+;;Eliminar espacios en blanco al final de la línea
+;automaticamnete al guardar el archivo
+(add-hook 'before-save-hook'delete-trailing-whitespace)
+(add-hook 'write-file-hooks'delete-trailing-whitespace nil t)
+
+;;Es un sistema de plantillas para Emacs. Provee templates de distintos
+;;lenguajes para que podamos expandir un modelo de función por ejemplo
+;;a partir de una abreviación.
+(yas-global-mode 1)
+
+;;;;;;;;;;;;;;;Funciones de Teclas;;;;;;;;;;;;;;;;;
+;;fullscreen
+;;(global-set-key(kbd"C-c w")'toggle-frame-fullscreen)
+
+;;Comentar varias líneas de Código
+(global-set-key(kbd"C-c c")'comment-region)
+
+;;Descomentar Varias líneas de Código
+(global-set-key(kbd"C-c d")'uncomment-region)
+
+;;Ir a una linea en especifico
+(global-set-key(kbd"C-c i")'goto-line)
+
+;;Aumenta/Disminuye la fuente C-- y C-+
+(global-set-key(kbd"C--")'text-scale-decrease)
+(global-set-key(kbd"C-+")'text-scale-increase)
+
+;;Auto Identación
+(global-set-key(kbd"RET")'newline-and-indent)
+
+;;Mostrar/Esconder los números de líneas <F5>
+(global-set-key(kbd"<f5>")'global-linum-mode)
+
+;;Abrir Blog de notas <F6>
+(global-set-key(kbd"<f6>")'remember)
+
+;;Entrar a la terminal ansi-terminal <F7>
+(global-set-key(kbd"<f7>")'(lambda()(interactive)(ansi-term "/bin/bash")))
+
+;;;;;;;;;;;;;;;;;Acceso Rapido a Directorios;;;;;;;;;;;;;;;;;
+
+;;Lanzar ~/.emacs/init.el "C-c 1"
+(global-set-key(kbd"C-c 1")(lambda()(interactive)(find-file"~/.emacs.d/init.el")))
+
+;;Lanzar directorio de estructuras
+(global-set-key(kbd"C-c 2")(lambda()(interactive)(find-file"~/Documentos/Estructuras")))
+
+;;Lanzar directorio de Python
+(global-set-key(kbd"C-c 3")(lambda()(interactive)(find-file"~/Documentos/Python")))
+
+;;Lanzara directorio de Scripts
+(global-set-key(kbd"C-c 4")(lambda()(interactive)(find-file"~/Documentos/Scripts")))
+
+;;;;;;;;;;;;;;;;;;;;;;;Movimiento entre ventanas;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;Arriba
+(global-set-key[s-up]'windmove-up)
+
+;;Abajo
+(global-set-key[s-down]'windmove-down)
+
+;;Derecha
+(global-set-key[s-right]'windmove-right)
+
+;;Izquierda
+(global-set-key[s-left]'windmove-left)
