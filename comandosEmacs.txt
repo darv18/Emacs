@@ -1,9 +1,15 @@
 Estos son comandos básicos y útiles para usar Emacs y no morir en el intento.
 
+The difference between emacs, and vi, is like the difference between making love,
+and masturbation.That is to say: ‘vi’ will always be there when you need it.
+
+
 C = Ctrl
 M (META) = Alt
 SUPER = Tecla de Windows
 SPC = Barra Espacio
+
+http://emacs-bootstrap.com/
 
 ############################################################################
 
@@ -12,8 +18,8 @@ SPC = Barra Espacio
 #COMANDOS BÁSICOS DE EMACS
 
 1.- Abrir un archivo.	.......... C-x C-f
-    
-2.- Cerrar Emacs	.......... C-x C-c	
+
+2.- Cerrar Emacs	.......... C-x C-c
 
 3.- Cerrar el buffer	.......... C-x k
 
@@ -52,63 +58,77 @@ SPC = Barra Espacio
      para poder mostrar
      el texto		.......... C-l
 
-18.- Buscar Una palabra .......... C-s
+18.- Se desplaza una pantalla
+     hacia abajo	.......... C-v
 
-19.- Buscar Siguiente	.......... C-s / C-r
+19.- Se desplaza una pantalla
+     hacia arriba	.......... M-v
 
-20.- Minimiza la ventana
+20.- Buscar Una palabra .......... C-s
+
+21.- Buscar Siguiente	.......... C-s / C-r
+
+22.- Minimiza la ventana
      de Emacs		.......... C-z
 ############################################################################
 
 #SHELL
 
-20.- Poder usar comandos
+23.- Poder usar comandos
      en Emacs		.......... M-x
 
-21.- Compilar Código en Emacs .... M-x compile
+24.- Compilar Código en Emacs .... M-x compile
      saldra make -k y pondremos
      g++ program.cpp -o program
 
-22.- Ejecutar Shell  	.......... M-x shell
+25.- Ejecutar Shell  	.......... M-x shell
 
      	      ó
 
-     Ejecutar Shell	.......... M-x eshell     
+     Ejecutar Shell	.......... M-x eshell
+
+26.- Abrir Shell Python .......... C-c C-p
 
 ############################################################################
 
 #MOVERSE POR TEXTO
 
-23.- Moverse un cararcter
+27.- Moverse un cararcter
      hacia delante	.......... C-f
 
-24.- Moverser un caracter
+28.- Moverser un caracter
      hacia atrás	.......... C-b
 
-25.- Moverse una palabra
-     hacia adelante	.......... M-f 
+29.- Moverse una palabra
+     hacia adelante	.......... M-f
 
-26.- Moverse una palabra
+30.- Moverse una palabra
      hacia atrás	.......... M-b
 
-27.- Moverse a la siguiente
+31.- Moverse a la siguiente
      línea		.......... C-n
 
-28.- Moverse a la línea
+32.- Moverse a la línea
      anterior		.......... C-p
 
-29.- Moverse al comienzo
+33.- Moverse al comienzo
      de una línea	.......... C-a
 
-30.- Moverse al final
+34.- Moverse al final
      de una línea	.......... C-e
 
-31.- Moverse al inicio
+35.- Moverse al inicio
      de una oración	.......... M-a
 
-32.- Moverse al final
-     de una oración	.......... M-e	    
+36.- Moverse al final
+     de una oración	.......... M-e
 
+37.- Revisar la ortografía
+     sobre alguna palabra ........ M-$
+
+38.- Revisar la ortografía
+     de todo el texto
+     en el buffer	.......... M-x ispell
 
 ############################################################################
 
@@ -118,13 +138,13 @@ SPC = Barra Espacio
 
 ~Ejemplos de mí Personalización en Emacs.-
 
-33.- Sí quiero quitar la barra de menu y la barra de tareas escribo lo
+39.- Sí quiero quitar la barra de menu y la barra de tareas escribo lo
      siguiente.
 
      '(menu-bar-mode nill)
      '(tool-bar-mode nill))
 
-34.- Sí quiero que aparezacan numeradas las lineas escribo la siguiente
+40.- Sí quiero que aparezacan numeradas las lineas escribo la siguiente
      línea.
 
      '(global-linum-mode t)
@@ -138,7 +158,7 @@ SPC = Barra Espacio
 
 *Cambiar theme de Emacs
 
-35.- Vamos al archivo de configuración de Emacs
+41.- Vamos al archivo de configuración de Emacs
      ~/.emacs y dentro del archivo en mi caso pondremos
      la siguiente línea:
 
@@ -146,7 +166,7 @@ SPC = Barra Espacio
 
 ~También existe la forma de poner un tema de forma gráfica
 
-36.- Ingresamos el comando "customize-themes" y tendremos algunos
+42.- Ingresamos el comando "customize-themes" y tendremos algunos
      themes por defecto, hay que recordar que al seleccionar
      la casilla de algun tema debemos guardarlo para que
      la configuración permanezca una ves allamos cerrado
@@ -159,13 +179,13 @@ SPC = Barra Espacio
 ~Lo que vamos a hacer es ampliar nuestra lista de pauqetes
     que por defecto lee Emacs
 
-37.- Visualizar paquetes por defecto de Emacs
+43.- Visualizar paquetes por defecto de Emacs
      		M-x list-package
 
 *Por defecto Emacs esta conectado al servidor elpa
 ~Nos conectaremos a un servidor llamado melpa
 
-38.- Entramos a customize
+44.- Entramos a customize
      M-x customize
 
      -En el filtramos "packages"
@@ -176,7 +196,7 @@ SPC = Barra Espacio
      -Vamos a Package User Dir ~/.emacs/<melpa>
      -Reiniciamos la sesión de Emacs
 
-39.- format-all	  Autoidentado
+45.- format-all	  Autoidentado
 
 #############################################################
 
@@ -200,10 +220,10 @@ SPC = Barra Espacio
 ################################################################
 
 
-40.- make-directory	.......... crear directorios desde
+46.- make-directory	.......... crear directorios desde
      				   la barra de Emacs
-				   
-41.- delete-directory	.......... borrar directorios desde
+
+47.- delete-directory	.......... borrar directorios desde
      				   la barra de Emacs
 
 ################################################################
@@ -255,9 +275,9 @@ Previous song		counsel-spotify-previous
 (custom-set-variables
  '(inhibit-startup-screen t)
  )
- 
+
 * Reiniciamos Emacs
-* Ahora en The Lazy Installer 
+* Ahora en The Lazy Installer
 
 (url-retrieve
  "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el"
